@@ -15,7 +15,23 @@
 
 ## 1. Two Sum (LeetCode 1)
     Problem: Find two numbers in the array that add up to a specific target.
-    Solution:
+
+## Algorithm :
+    1. Initialize a HashMap:
+
+    Create a HashMap<Integer, Integer> to store numbers as keys and their indices as values.
+
+    2. Iterate through the array:
+
+    For each number nums[i], compute its complement:
+
+    complement=target−nums[i]    
+    Check if the complement already exists in the HashMap:
+    If found, return the stored index and i as a new array.
+    Otherwise, store nums[i] and its index i in the HashMap.
+
+    3. Return an empty array if no solution is found (this case won’t happen as per problem constraints).
+    
 
 
 ```java
