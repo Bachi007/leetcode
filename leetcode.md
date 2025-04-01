@@ -48,3 +48,40 @@ class Solution {
         return new int[]{}; 
     }
 }
+```
+## 2. Best Time to Buy and Sell Stock (LeetCode 121)
+    Problem: Maximize profit by choosing one day to buy and another to sell.
+## Algorithm : 
+    1. Initialize variables:
+
+    minPrice = ∞ (Integer.MAX_VALUE): Keeps track of the lowest price encountered so far.
+    maxProfit = 0: Stores the maximum profit found so far.
+
+    2. Iterate through the prices array:
+
+    For each price in prices[]:
+    Update minPrice by comparing it with the current price:
+    minPrice=min(minPrice,price)
+   
+    3. Calculate profit if the stock is sold at the current price:
+    profit=price−minPrice
+    
+    4. Update maxProfit if the current profit is greater:
+    maxProfit=max(maxProfit,profit)
+    
+    5. Return maxProfit at the end.
+
+## Solution : 
+```java
+class Solution {
+    public int maxProfit(int[] prices) {
+        int minPrice = Integer.MAX_VALUE, maxProfit = 0;
+        for (int price : prices) {
+            minPrice = Math.min(minPrice, price);
+            maxProfit = Math.max(maxProfit, price - minPrice);
+        }
+        return maxProfit;
+    }
+}
+```
+
